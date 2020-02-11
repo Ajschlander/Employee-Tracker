@@ -143,15 +143,15 @@ async function updateData(){
     // Get list of employees
     const usersList = await Employees.findAll(
         {   
-            attributes: ["id", "first_name", "last_name"],
+            attributes: ["employee_id", "first_name", "last_name"],
             raw: true
         })
     
     const usersListString = [];
     
     for(let i = 0; i < usersList.length; i++){
-        const {id, first_name, last_name} = usersList[i];
-        const employeeInfo = `${id} ${first_name} ${last_name}`;
+        const {employee_id, first_name, last_name} = usersList[i];
+        const employeeInfo = `${employee_id} ${first_name} ${last_name}`;
         usersListString.push(employeeInfo)
     }
 
@@ -176,7 +176,7 @@ async function updateData(){
             role_id: newRole.role_id,
         }, 
         {
-            where: {id : usersList[indexOfSelected].id}
+            where: {employee_id : usersList[indexOfSelected].employee_id}
         });
       console.log(`${employeeToUpdate.selected} role updated!`)
       mainPrompt()
