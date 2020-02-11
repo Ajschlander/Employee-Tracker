@@ -16,8 +16,8 @@ async function mainPrompt(){
     const joinedDataTable = cTable.getTable(joinedData)
     console.log(joinedDataTable)
 
-    const view = "View data from a table";
-    const add = "Add data to a table";
+    const view = "View a table";
+    const add = "Add to a table";
     const update = "Update Employee Role";
     const exit = "Exit app";
     
